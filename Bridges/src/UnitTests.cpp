@@ -3,14 +3,15 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include <vector>
-#include <unordered_map>
 #include "Algorithm.h"
 
 using namespace std;
 
 vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 {
+	
 	vector<node*> graph;
+
 
 	for (int i = 0; i < numberOfNodes; i++)
 	{

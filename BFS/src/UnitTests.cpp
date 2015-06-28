@@ -78,16 +78,17 @@ TEST_CASE("Test bfs for simple graph") {
 				   12 3\n\
 				   13 12";
 
-	vector<node*> graph = GenerateGraph(input, 14);
-	BreadthFirstSearch* testee = new BreadthFirstSearch(graph, 14);
+	int numberOfNodes = 14;
+	vector<node*> graph = GenerateGraph(input, numberOfNodes);
+	BreadthFirstSearch* testee = new BreadthFirstSearch(graph, numberOfNodes);
 
 	vector<int> visitedNodes = testee->SearchGraph();
 
-	REQUIRE(visitedNodes.size() == 15);
+	REQUIRE(visitedNodes.size() == numberOfNodes);
 
-	int* requiredOrder = new int[] {0, 8, 2, 1, 9, 7, 5, 4, 13, 6, 12, 3, 11, 10};
+	int* requiredOrder = new int[numberOfNodes] {0, 8, 2, 1, 9, 7, 5, 4, 13, 6, 12, 3, 11, 10};
 
-	for (int i = 0; i < 14; i++) {
+	for (int i = 0; i < numberOfNodes; i++) {
 		REQUIRE(visitedNodes[i] == requiredOrder[i]);
 	}
 
