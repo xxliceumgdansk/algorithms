@@ -9,18 +9,20 @@ using namespace std;
 struct node {
 	public:
 		int number;
-		struct node *next;
+		struct node *next; // Node's neighborhood list can be queried here. 
+		
+		// you can query neighborhood this way: while(currentNode!=NULL) { currentNode = *(currentNode.Next);}
 };
 
 class Bridges
 {
     int numberOfNodes;
-    vector<node*> nodes;
+    vector<node*> graph;
 
     public:
-        Bridges(vector<node*> nodes, int numberOfNodes);
+        Bridges(vector<node*> graph, int numberOfNodes);
         virtual ~Bridges();
-		vector<vector<int>> Find();
+		vector<vector<int> > Find();
 
     protected:
     private:

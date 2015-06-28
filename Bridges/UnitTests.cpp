@@ -7,9 +7,7 @@ using namespace std;
 
 vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 {
-	
 	vector<node*> graph;
-
 
 	for (int i = 0; i < numberOfNodes; i++)
 	{
@@ -77,11 +75,11 @@ TEST_CASE("Test dfs for simple graph") {
 	vector<node*> graph = GenerateGraph(input, numberOfEdges);
 	Bridges* testee = new Bridges(graph, numberOfEdges);
 
-	vector<vector<int>> bridgeEdges = testee->Find();
+	vector<vector<int> > bridgeEdges = testee->Find();
 
 	REQUIRE(bridgeEdges.size() == 7);
 
-	vector<vector<int>> requiredEdges({ 
+	vector<vector<int> > requiredEdges({ 
 		{ 5, 6 }, 
 		{ 6, 7 }, 
 		{ 6, 8 }, 

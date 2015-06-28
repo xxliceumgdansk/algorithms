@@ -1,8 +1,8 @@
 #include "Algorithm.h"
 
-DepthFirstSearch::DepthFirstSearch(vector<node*> _nodes, int _numberOfNodes)
+DepthFirstSearch::DepthFirstSearch(vector<node*> _graph, int _numberOfNodes)
 {
-    nodes = _nodes;
+    graph = _graph;
     numberOfNodes = _numberOfNodes;
 }
 
@@ -19,6 +19,10 @@ vector<int> DepthFirstSearch::SearchGraphRecursive() {
 
 vector<int> DepthFirstSearch::SearchGraphStackVersion() {
 	vector<int> resultList;
+
+    // Your algorithm code goes here.
+    // Graph nodes are located in "graph" class field.
+    // Happy coding!
 
 	return resultList;
 }

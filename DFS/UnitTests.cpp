@@ -7,13 +7,14 @@ using namespace std;
 
 vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 {
-	vector<node*> result;
-	node** nodeList = new node*[numberOfNodes];
+	vector<node*> graph;
+
 	for (int i = 0; i < numberOfNodes; i++)
 	{
-		nodeList[i] = static_cast<node*>(malloc(sizeof(node)));
-		nodeList[i]->number = i;
-		nodeList[i]->next = NULL;
+		node* newNode = static_cast<node*>(malloc(sizeof(node)));
+		newNode->number = i;
+		newNode->next = NULL;
+		graph.push_back(newNode);
 	}
 
 	vector<string> lines;
@@ -33,26 +34,21 @@ vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 		int startNodeNumber = atoi(startString.c_str());
 		int endNodeNumber = atoi(endString.c_str());
 
-		node* startNode = nodeList[startNodeNumber];
+		node* startNode = graph[startNodeNumber];
 		startNode->number = startNodeNumber;
 
-		node* endNode = (node*)malloc(sizeof(node));
+		node* endNode = graph[endNodeNumber];
 
 		endNode->number = endNodeNumber;
 		endNode->next = startNode->next;
 
 		startNode->next = endNode;
 
-		nodeList[startNodeNumber] = startNode;
+		graph[startNodeNumber] = startNode;
 	}
 
-	for (int i = 0; i < numberOfNodes; i++) {
-		result.push_back(nodeList[i]);
-	}
-
-	return result;
+	return graph;
 }
-
 
 TEST_CASE("Test dfs for simple graph") {
 	string input = "6 9\n\

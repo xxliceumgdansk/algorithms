@@ -29,7 +29,35 @@
         "@runner": "AlgRunner",
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "run Algorithm": {
+                    "command": "echo $PWD",
+                    "debug": true,
+                    "name": "run Algorithm",
+                    "runner": "AlgRunner"
+                },
+                "run BFS": {
+                    "command": "",
+                    "cwd": "/BFS",
+                    "debug": true,
+                    "name": "run BFS",
+                    "runner": "AlgRunner"
+                },
+                "run Bridges": {
+                    "command": "",
+                    "cwd": "/Bridges",
+                    "debug": true,
+                    "name": "run Bridges",
+                    "runner": "AlgRunner"
+                },
+                "run DFS": {
+                    "command": "",
+                    "cwd": "/DFS",
+                    "debug": true,
+                    "name": "run DFS",
+                    "runner": "AlgRunner"
+                }
+            }
         }
     },
     "share": {

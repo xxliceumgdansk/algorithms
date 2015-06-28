@@ -9,16 +9,18 @@ using namespace std;
 struct node {
 	public:
 		int number;
-		struct node *next;
+		struct node *next; // Node's neighborhood list can be queried here. 
+		
+		// you can query neighborhood this way: while(currentNode!=NULL) { currentNode = *(currentNode.Next);}
 };
 
 class BreadthFirstSearch
 {
     int numberOfNodes;
-    vector<node*> nodes;
+    vector<node*> graph;
 
     public:
-        BreadthFirstSearch(vector<node*> nodes, int numberOfNodes);
+        BreadthFirstSearch(vector<node*> graph, int numberOfNodes);
         virtual ~BreadthFirstSearch();
         vector<int> SearchGraph();
         bool Bipartite();
