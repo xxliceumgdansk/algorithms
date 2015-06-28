@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Algorithm.h"
 
 DepthFirstSearch::DepthFirstSearch(vector<node*> _nodes, int _numberOfNodes)

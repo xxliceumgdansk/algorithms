@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include <vector>
@@ -75,7 +74,7 @@ TEST_CASE("Test dfs for simple graph") {
 
 	REQUIRE(visitedNodes.size() == numberOfEdges);
 
-	int* requiredOrder = new int[] {0, 1, 5, 2, 3, 4};
+	int* requiredOrder = new int[6] {0, 1, 5, 2, 3, 4};
 
 	for (int i = 0; i < numberOfEdges; i++) {
 		REQUIRE(visitedNodes[i] == requiredOrder[i]);
@@ -105,7 +104,7 @@ TEST_CASE("Test dfs, stacked version, for simple graph") {
 
 	REQUIRE(visitedNodes.size() == numberOfEdges);
 
-	int* requiredOrder = new int[] {0, 1, 5, 2, 3, 4};
+	int* requiredOrder = new int[6] {0, 1, 5, 2, 3, 4};
 
 	for (int i = 0; i < numberOfEdges; i++) {
 		REQUIRE(visitedNodes[i] == requiredOrder[i]);

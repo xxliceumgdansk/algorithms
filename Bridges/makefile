@@ -4,7 +4,7 @@ CC_FLAGS = -w -std=c++11
 
 # File names
 EXEC = run
-SOURCES = $(wildcard src/*.cpp)
+SOURCES = $(wildcard *.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Main target
@@ -13,7 +13,7 @@ $(EXEC): $(OBJECTS)
 
 # To obtain object files
 %.o: %.cpp
-	$(CC) -c $(CC_FLAGS) -I include $< -o $@ 
+	$(CC) -c $(CC_FLAGS) $< -o $@ 
 
 # To remove generated files
 clean:

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Algorithm.h"
 
 Bridges::Bridges(vector<node*> _nodes, int _numberOfNodes)
