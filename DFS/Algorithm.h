@@ -11,8 +11,7 @@ struct node {
 		int number;
 		struct node *next; // Node's neighborhood list can be queried here. 
 		
-		// you can query neighborhood this way: while(currentNode!=NULL) { currentNode = *(currentNode.Next);}
-    }
+		// you can query neighborhood this way: while(currentNode!=NULL) { currentNode = *(currentNode->Next);}
 };
 
 class DepthFirstSearch

@@ -31,10 +31,10 @@
             "@inited": "true",
             "json()": {
                 "run Algorithm": {
-                    "command": "echo $PWD",
+                    "command": "printenv",
                     "debug": true,
                     "name": "run Algorithm",
-                    "runner": "AlgRunner"
+                    "runner": "Shell command"
                 },
                 "run BFS": {
                     "command": "",
