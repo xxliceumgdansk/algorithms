@@ -1,0 +1,2 @@
+git checkout -b $C9_USER
+git push --set-upstream origin $C9_USER
