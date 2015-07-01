@@ -37,7 +37,7 @@ vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 		node* startNode = graph[startNodeNumber];
 		startNode->number = startNodeNumber;
 
-		node* endNode = graph[endNodeNumber];
+		node* endNode = (node*)malloc(sizeof(node));
 
 		endNode->number = endNodeNumber;
 		endNode->next = startNode->next;
@@ -50,6 +50,19 @@ vector<node*> GenerateGraph(std::string input, int numberOfNodes)
 	return graph;
 }
 
+void DeleteGraph(vector<node*> graph) {
+	node* currentNode = nullptr;
+	
+	for(int i=0;i<graph.size(); i++) {
+		currentNode = graph[i]->next;
+		while (currentNode != nullptr)	{
+			node* toDelete = currentNode;
+			currentNode = currentNode->next;
+			delete toDelete;
+		}
+		delete graph[i];
+	}
+}
 
 TEST_CASE("Test dfs for simple graph") {
 	string input = "0 1\n\
@@ -112,9 +125,7 @@ TEST_CASE("Test dfs for simple graph") {
 		REQUIRE(found);
 	}
 
-	for (int i; i < numberOfEdges; i++) {
-		delete graph[i];
-	}
+	DeleteGraph(graph);
 
 	delete testee;
 }
